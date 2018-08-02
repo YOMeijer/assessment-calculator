@@ -1,8 +1,92 @@
 <html>
     <head>
-        <title>CodePamoja Calculator Assessment</title>
+        <title>CodePamoja Calculator Assessment, Yuri Meijer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>CodePamoja Calculator Assessment</h1>
+        <span class="background-split"></span>
+        <main class="background">
+            
+        
+            <section id="calculator">
+                <div id="options-button">
+                    <img onclick="toggleOptionsWindow()" src="img/settings.svg" />
+                </div>
+                
+                <section id="options-overlay">
+                    <div class="options-window">
+                        <div class="option">
+                            <p>Classic Display</p>
+                            <div id="display-option" onclick="toggleOption(this)" class="option-toggle">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <p>Modulo Mode</p>
+                            <div id="modulo-option" onclick="toggleOption(this)" class="option-toggle">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <p>HHGTTG Mode</p>
+                            <div id="hhgttg-option" onclick="toggleOption(this)" class="option-toggle">
+                                <div></div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </section>
+                    
+
+                <div class="display">
+                    <div id="classic-display">
+                        <div id="classic-input-display"></div>
+                    </div>
+                    <div id="guideline-display">
+                        <div id="guideline-input-display"></div>
+                        <div id="guideline-result">
+                            <div class="equals">=</div>
+                            <div id="guideline-result-display"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="buttons">
+                    <section class="left-buttons">
+                        <section class="control-buttons">
+                            <button onclick="allClear()">AC</button>
+                            <button onclick="clearLast()">C</button>
+                            <button onclick="backspace()">&#x2190;</button>
+                        </section>
+                        <section class="number-buttons">
+                            <button onclick="setValue(this)">7</button>
+                            <button onclick="setValue(this)">8</button>
+                            <button onclick="setValue(this)">9</button>
+                            <button onclick="setValue(this)">4</button>
+                            <button onclick="setValue(this)">5</button>
+                            <button onclick="setValue(this)">6</button>
+                            <button onclick="setValue(this)">1</button>
+                            <button onclick="setValue(this)">2</button>
+                            <button onclick="setValue(this)">3</button>
+                            <button id="button-modulo" class="bottom-button" onclick="percent(this)">%</button>
+                            <button class="bottom-button" onclick="setValue(this)">0</button>
+                            <button class="bottom-button" onclick="toFloat()">.</button>
+                        </section>
+                    </section>
+        
+                    <section class="operator-buttons">
+                        <button id="button-divide" onclick="setOperator(this)">&divide</button>
+                        <button id="button-multiply" onclick="setOperator(this)">x</button>
+                        <button id="button-subtract" onclick="setOperator(this)">-</button>
+                        <button id="button-add" onclick="setOperator(this)">+</button>
+                        <button class="solve-button bottom-button" onclick="solve()">=</button>
+                    </section>
+                </section>
+            </section>
+        </main>
+
     </body>
+    <script src="js/calculator.js"></script>
 </html>
